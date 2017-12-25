@@ -1,0 +1,35 @@
+aside {
+  float: right;
+  width: 400px;
+
+}
+section {
+  margin-right: 280px;
+  padding-bottom: 50px;
+}
+
+.aside-menu li {
+  font-weight: 300;
+  list-style-type: square;
+  border-top: 1px solid #e7e7e7;
+}
+
+.aside-menu li:first-child {
+  border: none;
+}
+
+.aside-menu li.active {
+  color: #29c5e6;
+}
+
+.aside-menu a {
+  color: #8f8f8f;
+}
+
+
+aside > p {
+  background: #f3f3f3;
+  border: 1px solid #e7e7e7;
+  padding: 10px;
+  margin: 0;
+}
