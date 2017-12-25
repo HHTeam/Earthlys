@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Earthlys :: Лучшее</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="libs/content/css/uikit-rtl.css" />
+        <link rel="stylesheet" href="libs/content/css/grid.css" />  
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic|Playfair+Display:400,700&subset=latin,cyrillic">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css">            
+        <script src="libs/content/js/uikit.min.js"></script>
+        <script src="libs/content/js/uikit-icons.min.js"></script>
+    </head>
+    <header>
+    <!== Главное меню ==>
+        <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
+    <nav class="uk-navbar-container" uk-navbar="dropbar: true;" style="position: relative; z-index: 980;">
+    <div class="uk-navbar-center">
+
+        <a class="uk-navbar-item uk-logo" href="#">Earthlys</a>
+
+        <ul class="uk-navbar-nav">
+            <li>
+                <a href="index.html">
+                    <span class="uk-icon uk-margin-small-right" uk-icon="icon: home"></span>
+                    Главная
+                </a>
+            </li>
+        </ul>
+        <div class="uk-navbar-item">
+            <div><a href="contents.html">Статьи</a></div>
+        </div>
+        <div class="uk-navbar-item">
+            <div><a href="calend.html">Календарь событий</a></div>
+        </div>
+        <div class="uk-navbar-item">
+            <div><a href="contact.html">Связаться с нами</a></div>
+        </div>
+        <div class="uk-navbar-item">
+            <form action="javascript:void(0)">
+                <input class="uk-input uk-form-width-small" type="text" placeholder="Поиск">
+                <button class="uk-button uk-button-default">Искать</button>
+            </form>
+    </div>
+    </nav>
+</div>
+  </header>
+  <!== Посты ==!>
+  <div class="container">
+  <div class="posts-list">
+    <!-- Категорер -->
+    <div class="categorer">
+        <ul uk-tab>
+    <li class="uk-active"><a href="#">Выбор редакции<span class="uk-badge">10</span></a></li>
+    <li><a href="#">Книги<span class="uk-badge">7</span></a></li>
+    <li><a href="#">Новости сервиса<span class="uk-badge">2</span></a></li>
+</ul>
+    </div>
+    <!-- Посты-->
+    <article id="post-1" class="post">
+      <div class="post-content">
+        <h2 class="post-title">Весна</h2>
+        <p>Очень богат русский язык словами, относящимися к временам года и к природным явлениям, с ними связанным.</p>
+             <div class="post-image"><a href=""><img src="https://html5book.ru/wp-content/uploads/2016/05/rasskaz_slovar_rodnoy_prirodi.jpg"></a></div>
+        <div class="post-footer">
+                    <div class="category"><a href="">Дизайн</a></div>
+          <a class="more-link" href="">Продолжить чтение</a>
+          <div class="post-social">
+            <a href="" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a href="" target="_blank"><i class="fa fa-twitter"></i></a>
+            <a href="" target="_blank"><i class="fa fa-pinterest"></i></a>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article id="post-2" class="post">
+      ...
+    </article>
+  </div> <!-- конец div class="posts-list"-->
+  <!== Асайд ==!>
+  <aside>
+  <div class="widget">
+    <h3 class="widget-title">Категории</h3>
+    <ul class="widget-category-list">
+      <li><a href="">Дизайн</a> (2)</li>
+      <li><a href="">Вёрстка</a> (5)</li>
+      <li><a href="">Видео</a> (1)</li>
+    </ul>
+  </div>
+  <div class="widget">
+    <h3 class="widget-title">Свежие записи</h3>
+    <ul class="uk-list uk-list-divider">
+    <li>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. </li>
+    <li>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. </li>
+    <li>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. </li>
+</ul>
+</div>
+  <div class="widget">
+    <h3 class="widget-title">Онлайн-чат</h3>
+<div id="chatbro"></div>
+  </div>
+</aside>
+</div> <!-- конец div class="container"-->
+<footer>
+  <div class="container">
+    <div class="footer-col"><span>Earthlys © 2016-2017</span></div>
+    <div class="footer-col">
+      <div class="social-bar-wrap">
+        <a title="Facebook" href="" target="_blank"><i class="fa fa-facebook"></i></a>
+        <a title="Twitter" href="" target="_blank"><i class="fa fa-twitter"></i></a>
+        <a title="Pinterest" href="" target="_blank"><i class="fa fa-pinterest"></i></a>
+        <a title="Instagram" href="" target="_blank"><i class="fa fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <a href="mailto:admin@yoursite.ru">Написать письмо</a>
+    </div>
+  </div>
+</footer>
+<script>
+$('.nav-toggle').on('click', function(){
+$('#menu').toggleClass('active');
+});
+</script>
+
+<script id="chatBroEmbedCode">
+/* Chatbro Widget Embed Code Start */
+function ChatbroLoader(chats,async){async=!1!==async;var params={embedChatsParameters:chats instanceof Array?chats:[chats],lang:navigator.language||navigator.userLanguage,needLoadCode:'undefined'==typeof Chatbro,embedParamsVersion:localStorage.embedParamsVersion,chatbroScriptVersion:localStorage.chatbroScriptVersion},xhr=new XMLHttpRequest;xhr.withCredentials=!0,xhr.onload=function(){eval(xhr.responseText)},xhr.onerror=function(){console.error('Chatbro loading error')},xhr.open('GET','//www.chatbro.com/embed.js?'+btoa(unescape(encodeURIComponent(JSON.stringify(params)))),async),xhr.send()}
+/* Chatbro Widget Embed Code End */
+ChatbroLoader({encodedChatId: '8eDF'});
+</script>
+</body>
+</html>
