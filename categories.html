@@ -1,70 +1,237 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Earthlys :: Лучшее</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="libs/content/css/uikit-rtl.css" />
-        <link rel="stylesheet" href="libs/content/css/grid.css" />  
-            
-        <script src="libs/content/js/uikit.min.js"></script>
-        <script src="libs/content/js/uikit-icons.min.js"></script>
-    </head>
-<body>
 
-<!== Меню, хедер ==>
-<header>
-        <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
-    <nav class="uk-navbar-container" uk-navbar="dropbar: true;" style="position: relative; z-index: 980;">
-    <div class="uk-navbar-center">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="favicon.png">
+  <link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png">
+  <title>Earthlys :: Лучшее</title>
+  <link rel="stylesheet" href="libs/content/css/uikit-rtl.css"> 
+  <link rel="stylesheet" type="text/css" 
 
-        <a class="uk-navbar-item uk-logo" href="#">Earthlys</a>
-
-        <ul class="uk-navbar-nav">
-            <li>
-                <a href="index.html">
-                    <span class="uk-icon uk-margin-small-right" uk-icon="icon: home"></span>
-                    Главная
-                </a>
-            </li>
-        </ul>
-        <div class="uk-navbar-item">
-            <div><a href="contents.html">Статьи</a></div>
+<body class="contents home page v5">
+  <div class="tm-page">
+    <div class="tm-header-mobile uk-hidden@m">
+      <nav class="uk-navbar-container uk-navbar" uk-navbar="">
+        <div class="uk-navbar-center">
+          <a class="uk-navbar-item uk-logo" href="index.html">
+            <img src="#" class="uk-responsive-height" alt="Earthlys"> </a>
         </div>
-        <div class="uk-navbar-item">
-            <div><a href="calend.html">Календарь событий</a></div>
+        <div class="uk-navbar-right">
+          <a class="uk-navbar-toggle" href="#tm-mobile" uk-toggle="">
+            <div uk-navbar-toggle-icon="" class="uk-navbar-toggle-icon uk-icon"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" ratio="1"><rect y="9" width="20" height="2"></rect><rect y="3" width="20" height="2"></rect><rect y="15" width="20" height="2"></rect></svg></div>
+          </a>
         </div>
-        <div class="uk-navbar-item">
-            <div><a href="contact.html">Связаться с нами</a></div>
+      </nav>
+      <div id="tm-mobile" class="uk-modal-full uk-modal" uk-modal="">
+        <div class="uk-modal-dialog uk-modal-body uk-text-center uk-flex" uk-height-viewport="" style="box-sizing: border-box; min-height: 100vh; height: 100vh;">
+          <button class="uk-modal-close-full uk-close uk-icon" type="button" uk-close=""><svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" ratio="1"><line fill="none" stroke="#000" stroke-width="1.1" x1="1" y1="1" x2="13" y2="13"></line><line fill="none" stroke="#000" stroke-width="1.1" x1="13" y1="1" x2="1" y2="13"></line></svg></button>
+          <div class="uk-margin-auto-vertical uk-width-1-1">
+            <div class="uk-child-width-1-1 uk-grid uk-grid-stack" uk-grid="">
+              <div>
+                <div class="uk-panel">
+                  <ul class="uk-nav uk-nav-primary uk-nav-center">
+                    <li class="uk-active  menu-item menu-item-type-custom menu-item-object-custom">
+                      <a href="index.html">Главная</a>
+                    </li>
+                    <li class=" menu-item menu-item-type-taxonomy menu-item-object-category">
+                      <a href="contents.html">Статьи</a>
+                    </li>
+                    <li class=" menu-item menu-item-type-post_type menu-item-object-page">
+                      <a href="calendar.html">Календарь событий</a>
+                    </li>
+                    <li class=" menu-item menu-item-type-post_type menu-item-object-page">
+                      <a href="about.html">О "Earthlys"</a>
+                    </li>
+                    <li class=" menu-item menu-item-type-post_type menu-item-object-page">
+                      <a href="contacts.html">Контакты</a>
+                    </li>
+                    <li class=" menu-item menu-item-type-post_type menu-item-object-page">
+                      <a href="docs/ru-ru/index.html">Документация</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="uk-navbar-item">
-            <form action="javascript:void(0)">
-                <input class="uk-input uk-form-width-small" type="text" placeholder="Поиск">
-                <button class="uk-button uk-button-default">Искать</button>
-            </form>
+      </div>
     </div>
-    </nav>
-</div>
-</header>    
-<!== Посты ==>
-<div class="container">
-    <div class="posts">
-<!--Идентификатор постов --> <article id="id-1" class="post_card">
+    <!-- Декстопное меню-->
+    <div class="tm-header uk-visible@m" uk-header="">
+      <div class="tm-headerbar-top">
+        <div class="uk-container">
+          <div class="uk-text-center">
 
-</article>
- </div>
-</div>
+          </div>
+        </div>
+      </div>
+      <div uk-sticky="" media="768" cls-active="uk-navbar-sticky" sel-target=".uk-navbar-container" class="uk-sticky" style="">
+        <div class="uk-navbar-container">
+          <div class="uk-container">
+            <nav class="uk-navbar" uk-navbar="{&quot;align&quot;:&quot;left&quot;}">
+              <div class="uk-navbar-center">
+                <ul class="uk-navbar-nav">
 
-<!== Асайд ==>
-<aside>
-    
-</aside>
-
-<!== Футер==>
-<footer>
-    
-</footer>
-
-
+                  <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                    <a href="index.html"><b>Earthlys </b> / Главная</a>
+                  </li>
+                  <li class=" uk-active  menu-item menu-item-type-custom menu-item-object-custom">
+                    <a href="contents.html">Статьи</a>
+                  </li>
+                  <li class=" menu-item menu-item-type-post_type menu-item-object-page">
+                    <a href="calendar.html">Календарь событий</a>
+                  </li>
+                  <li class=" menu-item menu-item-type-post_type menu-item-object-page">
+                    <a href="about.html">О "Earthlys"</a>
+                  </li>
+                  <li class=" menu-item menu-item-type-post_type menu-item-object-page">
+                    <a href="contacts.html">Контакты</a>
+                  </li>
+                  <li class=" menu-item menu-item-type-post_type menu-item-object-page">
+                    <a href="docs/ru-ru/index.html">Документация</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="uk-sticky-placeholder" style="height: 70px; margin: 0px;" hidden=""></div>
+  <div id="tm-main" class="tm-main uk-section uk-section-default" uk-height-viewport="expand: true" style="box-sizing: border-box;">
+    <div class="uk-container">
+      <div class="uk-grid uk-grid-large" uk-grid="">
+        <div class="uk-width-expand@m uk-first-column">
+          <!--== Категории==!-->
+<dt><a href="contents.html">Лучшее</a></dt> 
+<dd>Лучшие материалы, которые выбираются редакцией и публикуются каждый месяц.</dd> 
+<dt><a href="trips.html">Путешествия</a></dt> 
+<dd>В этой категории всё про путешествия: страны, города, достопримечательности и интересные места - всё собрано здесь.</dd> 
+<dt><a href="peoples.html">Люди</a></dt> 
+<dd>В отличии от категории "Путешествия" здесь публикуется всё про знаменитых личностей и не только.</dd> 
+<dt><a href="culture.html">Культура</a></dt> 
+<dd>Иногда бывает интересно узнать про чью-либо культуру, именно здесь можно с ней ознакомится </dd> 
+<dt><a href="lifestyle.html">Стиль жизни</a></dt> 
+<dd>Вроде-бы всё понятно </dd> 
+<dt><a href="food.html">Еда</a></dt> 
+<dd>То, без чего мы жить не можем. Про них обычно кто-то пишет, опустошая холодильник. </dd> 
+<dt><a href="special.html">Специальные проекты</a></dt> 
+<dd>До какого-то времени все статьи считались специальными, но со временем Админ обленился и решил создать эту категорию</dd> 
+<dt><a href="library.html">Книги</a></dt> 
+<dd>Список научных, интересных и не очень, длинных и коротких, с картинками и без, книг для прочтения</dd>
+ <dt><a href="nouka.html">Научные статьи</a></dt> 
+<dd>Научные статьи с указанием источника.</dd>
+        </div>
+        <aside id="tm-sidebar" class="tm-sidebar uk-width-1-4@m">
+          <div class="uk-child-width-1-1 uk-grid uk-grid-stack" uk-grid="">
+            <div class="uk-first-column">
+              <div class="uk-panel widget-text" id="widget-text-2">
+                <h3 class="uk-h4 uk-heading-line"> <span>Меню</span></h3>
+                <div class="textwidget">
+                  <img src="RSS.xml" alt="">
+                  <a class="uk-button uk-button-text" href="index.html" title="MAIN"> Главная&nbsp;
+                    <br> </a>
+                </div>
+                <div class="textwidget">
+                  <img src="RSS.xml" alt="">
+                  <a class="uk-button uk-button-text" href="guide.html" title="GUIDE"> Как написать статью?&nbsp;
+                    <br> </a>
+                </div>
+                <div class="textwidget">
+                  <img src="RSS.xml" alt="">
+                  <a class="uk-button uk-button-text" href="contacts.html" title="CONTACTS"> Связаться с нами&nbsp;
+                    <br> </a>
+                </div>
+                <div class="textwidget">
+                  <img src="RSS.xml" alt="">                  
+                  <a class="uk-button uk-button-text" href="rss.xml" title="RSS"> RSS-ЛЕНТА
+                    <br> </a>
+                </div>
+              </div>
+            </div>
+            <div class="uk-grid-margin uk-first-column">
+              <div class="uk-panel widget-text" id="widget-text-3">
+                <h3 class="uk-h4 uk-heading-line"> <span>Категории</span></h3>
+                <div class="textwidget">
+                  <ul class="uk-nav uk-nav-default uk-nav-parent-icon uk-nav-accordion" uk-nav="" style="">
+                    <li class=" menu-item menu-item-type-taxonomy menu-item-object-category current-category-ancestor current-category-parent">
+                      <a href="categories.html">Все категории &gt;&gt;</a>
+                    </li>
+                    <li class="uk-active  menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item">
+                      <a href="contents.html">ЛУЧШЕЕ</a>
+                    </li>
+                    <li class=" menu-item menu-item-type-taxonomy menu-item-object-category">
+                      <a href="trips.html">Путешествия</a>
+                    </li>
+                    <li class=" menu-item menu-item-type-taxonomy menu-item-object-category">
+                      <a href="culture.html">Культура</a>
+                    </li>
+                    <li class=" menu-item menu-item-type-taxonomy menu-item-object-category">
+                      <a href="lifestyle.html">Стиль жизни</a>
+                    </li>
+                    <li class=" menu-item menu-item-type-taxonomy menu-item-object-category">
+                      <a href="peoples.html">Люди</a>
+                    </li>
+                    <li class=" menu-item menu-item-type-taxonomy menu-item-object-category">
+                      <a href="food.html">Еда</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="uk-grid-margin uk-first-column">
+            <div class="uk-panel widget-text" id="widget-text-3">
+              <div class="textwidget">
+                <div class="uk-panel uk-padding uk-background-muted uk-text-center">
+                  <blockquote>
+                    <p>“Соприкосновение с природой есть самое последнее слово всякого прогресса, науки, рассудка, здравого смысла, вкуса и отличной манеры.“</p>
+                    <footer class="uk-margin-top">Ф.М. Достоевский</footer>
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="uk-grid-margin uk-first-column">
+            <div class="uk-panel widget-text" id="widget-text-6">
+              <h3 class="uk-h4 uk-heading-line">«Earthlys» в соц.с<span>eтях</span></h3>
+              <div class="textwidget">
+                <a class="uk-margin-small-right uk-icon-button uk-icon" uk-icon="icon: facebook" href="https://facebook.com"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" ratio="1"> <path d="M11,10h2.6l0.4-3H11V5.3c0-0.9,0.2-1.5,1.5-1.5H14V1.1c-0.3,0-1-0.1-2.1-0.1C9.6,1,8,2.4,8,5v2H5.5v3H8v8h3V10z"></path></svg></a>
+                <a class="uk-margin-small-right uk-icon-button uk-icon"
+                  uk-icon="icon: instagram" href="https://instagram.com"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" ratio="1"> <path d="M13.55,1H6.46C3.45,1,1,3.44,1,6.44v7.12c0,3,2.45,5.44,5.46,5.44h7.08c3.02,0,5.46-2.44,5.46-5.44V6.44 C19.01,3.44,16.56,1,13.55,1z M17.5,14c0,1.93-1.57,3.5-3.5,3.5H6c-1.93,0-3.5-1.57-3.5-3.5V6c0-1.93,1.57-3.5,3.5-3.5h8 c1.93,0,3.5,1.57,3.5,3.5V14z"></path> <circle cx="14.87" cy="5.26" r="1.09"></circle> <path d="M10.03,5.45c-2.55,0-4.63,2.06-4.63,4.6c0,2.55,2.07,4.61,4.63,4.61c2.56,0,4.63-2.061,4.63-4.61 C14.65,7.51,12.58,5.45,10.03,5.45L10.03,5.45L10.03,5.45z M10.08,13c-1.66,0-3-1.34-3-2.99c0-1.65,1.34-2.99,3-2.99s3,1.34,3,2.99 C13.08,11.66,11.74,13,10.08,13L10.08,13L10.08,13z"></path></svg></a>
+                <a class="uk-icon-button uk-icon" uk-icon="icon: pinterest" href="https://pinterest.com"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" ratio="1"> <path d="M10.21,1 C5.5,1 3,4.16 3,7.61 C3,9.21 3.85,11.2 5.22,11.84 C5.43,11.94 5.54,11.89 5.58,11.69 C5.62,11.54 5.8,10.8 5.88,10.45 C5.91,10.34 5.89,10.24 5.8,10.14 C5.36,9.59 5,8.58 5,7.65 C5,5.24 6.82,2.91 9.93,2.91 C12.61,2.91 14.49,4.74 14.49,7.35 C14.49,10.3 13,12.35 11.06,12.35 C9.99,12.35 9.19,11.47 9.44,10.38 C9.75,9.08 10.35,7.68 10.35,6.75 C10.35,5.91 9.9,5.21 8.97,5.21 C7.87,5.21 6.99,6.34 6.99,7.86 C6.99,8.83 7.32,9.48 7.32,9.48 C7.32,9.48 6.24,14.06 6.04,14.91 C5.7,16.35 6.08,18.7 6.12,18.9 C6.14,19.01 6.26,19.05 6.33,18.95 C6.44,18.81 7.74,16.85 8.11,15.44 C8.24,14.93 8.79,12.84 8.79,12.84 C9.15,13.52 10.19,14.09 11.29,14.09 C14.58,14.09 16.96,11.06 16.96,7.3 C16.94,3.7 14,1 10.21,1"></path></svg></a>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+  <div class="uk-section-secondary uk-section uk-padding-remove-vertical">
+    <div class="uk-margin-remove-vertical uk-grid uk-grid-stack" uk-grid="">
+      <div class="uk-width-1-1@m uk-first-column">
+        <hr> </div>
+      <footer>
+        <div class="container">
+          <div class="footer-col"><span>Earthlys © 2016-2017</span></div>
+          <div class="footer-col">
+            <div class="social-bar-wrap">
+              <a title="Facebook" href="" target="_blank"><i class="fa fa-facebook"></i></a>
+              <a title="Twitter" href="" target="_blank"><i class="fa fa-twitter"></i></a>
+              <a title="Instagram" href="" target="_blank"><i class="fa fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <a href="mailto:admin@yoursite.ru">Написать письмо</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
 </body>
+
 </html>
