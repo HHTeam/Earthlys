@@ -17,7 +17,7 @@ html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   /* 3 */
-  background: #33282A;
+  background: #fff;
   color: #666;
 }
 /*
@@ -3488,10 +3488,13 @@ select.uk-form-width-xsmall {
 }
 /* Placeholder */
 .uk-search-input:-ms-input-placeholder {
+  color: #999 !important;
 }
 .uk-search-input::-moz-placeholder {
+  color: #999;
 }
 .uk-search-input::-webkit-input-placeholder {
+  color: #999;
 }
 /* Icon (Adopts `uk-icon`)
  ========================================================================== */
@@ -3580,14 +3583,13 @@ select.uk-form-width-xsmall {
  ========================================================================== */
 .uk-search-navbar {
   width: 400px;
-  background: #ffffff;
 }
 /*
  * Input
  */
 .uk-search-navbar .uk-search-input {
   height: 40px;
-  background: #ffffff;
+  background: transparent;
   font-size: 1.5rem;
 }
 /*
@@ -3784,7 +3786,7 @@ ul.uk-nav-sub {
  * Header
  */
 .uk-nav-primary .uk-nav-header {
-  color: #fff;
+  color: #333;
 }
 /*
  * Divider
@@ -3832,7 +3834,7 @@ ul.uk-nav-sub {
 /* Container
  ========================================================================== */
 .uk-navbar-container:not(.uk-navbar-transparent) {
-  background: #145757;
+  background: #f8f8f8;
 }
 /*
  * Remove pseudo elements created by micro clearfix as precaution (if Container component is used)
