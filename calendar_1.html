@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Earthlys :: Календарь</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="libs/content/css/uikit-rtl.css"> 
+  <link rel="stylesheet" type="text/css"
+  <!-- UIkit JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.35/js/uikit.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.35/js/uikit-icons.min.js"></script>
+    <style type="text/css">
+<style>
+#calendarBig { /* весь календарь */ 
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  border-spacing: 0 1.5em;
+}
+#calendarBig td {
+  vertical-align: top;
+}
+#calendarBig > thead td:not(:nth-child(2)) { /* предыдущий-следующий года */ 
+  text-decoration: underline;
+  color: rgb(0, 119, 204);
+  cursor: pointer;
+}
+#calendarBig > thead td:not(:nth-child(2)):hover { /* если наведён курсор на предыдущий-следующий года */ 
+  color: #ff3200;
+}
+#calendarBig > thead td:nth-child(2) { /* текущий год */ 
+  font-size: 150%;
+  font-weight: 700;
+  color: rgb(140, 61, 2);
+}
+#calendarBig, #calendarBig table {
+  font: monospace;
+  line-height: 1.2em;
+  font-size: 15px;
+  text-align: center;
+}
+#calendarBig table { /* таблицы с месяцами выравнены по верхней границе, горизонтально — по центру */ 
+  display: inline-table;
+}
+#calendarBig table thead tr:nth-child(1) { /* названия месяцев */ 
+  font-size: 110%;
+  font-weight: 700;
+}
+#calendarBig table thead tr:last-child { /* название дней недели */ 
+  font-size: small;
+  font-weight: 700;
+  color: rgb(103, 103, 103);
+}
+#calendarBig table tbody td { /* дни */ 
+  color: rgb(44, 86, 122);
+}
+#calendarBig table tbody td:nth-child(n+6), #calendarBig .holiday { /* выходные и праздники */ 
+  color: rgb(231, 140, 92);
+}
+#calendarBig table tbody td.today { /* сегодня */ 
+  outline: 3px solid red;
+}
+#calendarBig table tbody td[title] { /* выделенные даты */ 
+  outline: 3px solid green;
+  background: yellow;
+  cursor: help;
+}
+#calendarBig table tbody td[title] a { /* выделенные даты-ссылки */ 
+  display: block;
+  text-decoration: none;
+}
+#calendarBig table tbody td[title] a:hover { /* выделенные даты-ссылки под курсором */
+  background: #fde910;
+  color: red;
+}
+</style>
+
+<body class="calendar page v6">
+  <div class="tm-page">
+    <div class="tm-header-mobile uk-hidden@m">
+      <nav class="uk-navbar-container uk-navbar" uk-navbar="">
+        <div class="uk-navbar-center">
+          <a class="uk-navbar-item uk-logo" href="index.html">
+            <img src="#" class="uk-responsive-height" alt="Earthlys"> </a>
+        </div>
+        <div class="uk-navbar-right">
+          <a class="uk-navbar-toggle" href="#tm-mobile" uk-toggle="">
+            <div uk-navbar-toggle-icon="" class="uk-navbar-toggle-icon uk-icon"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" ratio="1"><rect y="9" width="20" height="2"></rect><rect y="3" width="20" height="2"></rect><rect y="15" width="20" height="2"></rect></svg></div>
+          </a>
+        </div>
+      </nav>
+      <div id="tm-mobile" class="uk-modal-full uk-modal" uk-modal="">
+        <div class="uk-modal-dialog uk-modal-body uk-text-center uk-flex" uk-height-viewport="" style="box-sizing: border-box; min-height: 100vh; height: 100vh;">
+          <button class="uk-modal-close-full uk-close uk-icon" type="button" uk-close=""><svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" ratio="1"><line fill="none" stroke="#000" stroke-width="1.1" x1="1" y1="1" x2="13" y2="13"></line><line fill="none" stroke="#000" stroke-width="1.1" x1="13" y1="1" x2="1" y2="13"></line></svg></button>
+          <div class="uk-margin-auto-vertical uk-width-1-1">
+            <div class="uk-child-width-1-1 uk-grid uk-grid-stack" uk-grid="">
+              <div>
+                <div class="uk-panel">
+                  <ul class="uk-nav uk-nav-primary uk-nav-center">
+                    <li class="uk-active  menu-item menu-item-type-custom menu-item-object-custom">
+                      <a href="index.html">Главная</a>
+                    </li>
+                    <li class=" menu-item menu-item-type-taxonomy menu-item-object-category">
+                      <a href="contents.html">Статьи</a>
+                    </li>
+                    <li class=" menu-item menu-item-type-post_type menu-item-object-page">
+                      <a href="calendar.html">Календарь событий</a>
+                    </li>
+                    <li class=" menu-item menu-item-type-post_type menu-item-object-page">
+                      <a href="about.html">О "Earthlys"</a>
+                    </li>
+                    <li class=" menu-item menu-item-type-post_type menu-item-object-page">
+                      <a href="contacts.html">Контакты</a>
+                    </li>
+                    <li class=" menu-item menu-item-type-post_type menu-item-object-page">
+                      <a href="docs/ru-ru/index.html">Документация</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Декстопное меню-->
+    <div class="tm-header uk-visible@m" uk-header="">
+      <div class="tm-headerbar-top">
+        <div class="uk-container">
+          <div class="uk-text-center"> </div>
+        </div>
+      </div>
+      <div uk-sticky="" media="768" cls-active="uk-navbar-sticky" sel-target=".uk-navbar-container" class="uk-sticky" style="">
+        <div class="uk-navbar-container">
+          <div class="uk-container">
+            <nav class="uk-navbar" uk-navbar="{&quot;align&quot;:&quot;left&quot;}">
+              <div class="uk-navbar-center">
+                <ul class="uk-navbar-nav">
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                    <a href="index.html" class="ustom"><b>Earthlys </b> / Главная</a>
+                  </li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                    <a href="contents.html" class="">Статьи</a>
+                  </li>
+                  <li class="uk-active  menu-item menu-item-type-custom menu-item-object-custom">
+                    <a href="calendar.html">Календарь событий</a>
+                  </li>
+                  <li class=" menu-item menu-item-type-post_type menu-item-object-page">
+                    <a href="about.html">О "Earthlys"</a>
+                  </li>
+                  <li class=" menu-item menu-item-type-post_type menu-item-object-page">
+                    <a href="contacts.html">Контакты</a>
+                  </li>
+                  <li class=" menu-item menu-item-type-post_type menu-item-object-page">
+                    <a href="docs/ru-ru/index.html">Документация</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="uk-sticky-placeholder" style="height: 70px; margin: 0px;" hidden=""></div>
+  <!--Основной контент-->
+  <div class="uk-section uk-section-primary uk-preserve-color">
+    <div class="uk-container">
+      <div class="uk-panel uk-light uk-margin-medium">
+        <div class="uk-child-width-1-3@m" uk-grid="" uk-scrollspy="cls: uk-animation-fade; target: > div > .uk-card; delay: 500; repeat: true">
+          <div>
+            <div class="uk-card uk-card-secondary uk-card-body">
+              <h3 class="uk-card-title" i="">Календарь событий</h3>
+            </div>
+          </div>
+          <div>
+            <div class="uk-card uk-card-default uk-card-body">
+              <h3 class="uk-card-title">Название</h3>
+              <p>Описание</p>
+            </div>
+          </div>
+          <div>
+            <div class="uk-card uk-card-default uk-card-body">
+              <h3 class="uk-card-title">Название</h3>
+              <p>Описание</p>
+            </div>
+          </div>
+          <div>
+            <div class="uk-card uk-card-default uk-card-body">
+              <h3 class="uk-card-title">Название</h3>
+              <p>Описание</p>
+            </div>
+          </div>
+          <div>
+            <div class="uk-card uk-card-default uk-card-body">
+              <h3 class="uk-card-title">Название</h3>
+              <p>Описание</p>
+            </div>
+          </div>
+          <div>
+            <div class="uk-card uk-card-default uk-card-body">
+              <h3 class="uk-card-title">Название</h3>
+              <p>Описание</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<center>
+<table id="calendarBig">
+ <thead>
+  <tr><td><td><td>
+ <tbody>
+  <tr>
+    <td>
+      <table data-m="0">
+        <thead>
+          <tr><td colspan="7">Январь
+          <tr><td>Пн<td>Вт<td>Ср<td>Чт<td>Пт<td>Сб<td>Вс
+        <tbody>
+      </table>
+    <td>
+      <table data-m="1">
+        <thead>
+          <tr><td colspan="7">Февраль
+          <tr><td>Пн<td>Вт<td>Ср<td>Чт<td>Пт<td>Сб<td>Вс
+        <tbody>
+      </table>
+    <td>
+      <table data-m="2">
+        <thead>
+          <tr><td colspan="7">Март
+          <tr><td>Пн<td>Вт<td>Ср<td>Чт<td>Пт<td>Сб<td>Вс
+        <tbody>
+      </table>
+  <tr>
+    <td>
+      <table data-m="3">
+        <thead>
+          <tr><td colspan="7">Апрель
+          <tr><td>Пн<td>Вт<td>Ср<td>Чт<td>Пт<td>Сб<td>Вс
+        <tbody>
+      </table>
+    <td>
+      <table data-m="4">
+        <thead>
+          <tr><td colspan="7">Май
+          <tr><td>Пн<td>Вт<td>Ср<td>Чт<td>Пт<td>Сб<td>Вс
+        <tbody>
+      </table>
+    <td>
+      <table data-m="5">
+        <thead>
+          <tr><td colspan="7">Июнь
+          <tr><td>Пн<td>Вт<td>Ср<td>Чт<td>Пт<td>Сб<td>Вс
+        <tbody>
+      </table>
+  <tr>
+    <td>
+      <table data-m="6">
+        <thead>
+          <tr><td colspan="7">Июль
+          <tr><td>Пн<td>Вт<td>Ср<td>Чт<td>Пт<td>Сб<td>Вс
+        <tbody>
+      </table>
+    <td>
+      <table data-m="7">
+        <thead>
+          <tr><td colspan="7">Август
+          <tr><td>Пн<td>Вт<td>Ср<td>Чт<td>Пт<td>Сб<td>Вс
+        <tbody>
+      </table>
+    <td>
+      <table data-m="8">
+        <thead>
+          <tr><td colspan="7">Сентябрь
+          <tr><td>Пн<td>Вт<td>Ср<td>Чт<td>Пт<td>Сб<td>Вс
+        <tbody>
+      </table>
+  <tr>
+    <td>
+      <table data-m="9">
+        <thead>
+          <tr><td colspan="7">Октябрь
+          <tr><td>Пн<td>Вт<td>Ср<td>Чт<td>Пт<td>Сб<td>Вс
+        <tbody>
+      </table>
+    <td>
+      <table data-m="10">
+        <thead>
+          <tr><td colspan="7">Ноябрь
+          <tr><td>Пн<td>Вт<td>Ср<td>Чт<td>Пт<td>Сб<td>Вс
+        <tbody>
+      </table>
+    <td>
+      <table data-m="11">
+        <thead>
+          <tr><td colspan="7">Декабрь
+          <tr><td>Пн<td>Вт<td>Ср<td>Чт<td>Пт<td>Сб<td>Вс
+        <tbody>
+      </table>
+</table>
+<div id="calendarTable">
+  <div data-dd="18" data-mm="8" data-text="День рождения"></div>
+  <div data-dd="5" data-mm="1" data-yyyy="2013" data-text="регулярные выражения
+JavaScript примеры" data-link="http://shpargalkablog.ru/2013/07/replace.html"></div>
+  <div data-dd="28" data-mm="11" data-yyyy="2013" data-text="✈ встреча у бабушки
+☏ поздравить Ивана Ивановича с именинами
+☄ комета ISON"></div>
+</div>
+
+<script>
+function calendarBig(year) {
+for (var m = 0; m <= 11; m++) {
+var D = new Date(year,[m],1),
+    Dlast = new Date(D.getFullYear(),D.getMonth()+1,0).getDate(),
+    DNlast = new Date(D.getFullYear(),D.getMonth(),Dlast).getDay(),
+    DNfirst = new Date(D.getFullYear(),D.getMonth(),1).getDay(),
+    calendar = '<tr>';
+
+if (DNfirst != 0) {
+  for(var  i = 1; i < DNfirst; i++) calendar += '<td>';
+}else{
+  for(var  i = 0; i < 6; i++) calendar += '<td>';
+}
+
+for(var  i = 1; i <= Dlast; i++) {
+  if (i == new Date().getDate() && D.getFullYear() == new Date().getFullYear() && D.getMonth() == new Date().getMonth()) {
+    calendar += '<td class="today">' + i;
+  }else{
+    if (
+        (i == 1 && D.getMonth() == 0 && ((D.getFullYear() > 1897 && D.getFullYear() < 1930) || D.getFullYear() > 1947)) ||
+        (i == 2 && D.getMonth() == 0 && D.getFullYear() > 1992) ||
+        ((i == 3 || i == 4 || i == 5 || i == 6 || i == 8) && D.getMonth() == 0 && D.getFullYear() > 2004) ||
+        (i == 7 && D.getMonth() == 0 && D.getFullYear() > 1990) ||
+        (i == 23 && D.getMonth() == 1 && D.getFullYear() > 2001) ||
+        (i == 8 && D.getMonth() == 2 && D.getFullYear() > 1965) ||
+        (i == 1 && D.getMonth() == 4 && D.getFullYear() > 1917) ||
+        (i == 9 && D.getMonth() == 4 && D.getFullYear() > 1964) ||
+        (i == 12 && D.getMonth() == 5 && D.getFullYear() > 1990) ||
+        (i == 7 && D.getMonth() == 10 && (D.getFullYear() > 1926 && D.getFullYear() < 2005)) ||
+        (i == 8 && D.getMonth() == 10 && (D.getFullYear() > 1926 && D.getFullYear() < 1992)) ||
+        (i == 4 && D.getMonth() == 10 && D.getFullYear() > 2004)
+       ) {
+      calendar += '<td class="holiday">' + i;
+    }else{
+      calendar += '<td>' + i;
+    }
+  }
+  if (new Date(D.getFullYear(),D.getMonth(),i).getDay() == 0) {
+    calendar += '<tr>';
+  }
+}
+
+if (DNlast != 0) {
+  for(var  i = DNlast; i < 7; i++) calendar += '<td>';
+}
+
+document.querySelector('#calendarBig table[data-m="' + [m] + '"] tbody').innerHTML = calendar;
+document.querySelector('#calendarBig > thead td:nth-child(2)').innerHTML = 'Календарь на ' + year + ' год';
+document.querySelector('#calendarBig > thead td:nth-child(1)').innerHTML = 'Календарь на ' + parseFloat(parseFloat(year)-1) + ' год';
+document.querySelector('#calendarBig > thead td:nth-child(3)').innerHTML = 'Календарь на ' + parseFloat(parseFloat(year)+1) + ' год';
+
+// абзац создаёт сообщения
+for (var k = 1; k <= document.querySelectorAll('#calendarTable div').length; k++) {
+  var myD = document.querySelectorAll('#calendarBig table td'),
+      my = document.querySelector('#calendarTable div:nth-child(' + [k] + ')');
+  for (var i = 0; i < myD.length; i++) {
+    if (my.dataset.yyyy) {
+      if (myD[i].innerHTML == my.dataset.dd && myD[i].parentNode.parentNode.parentNode.dataset.m == (my.dataset.mm - 1) && year == my.dataset.yyyy) {
+        myD[i].title = my.dataset.text;
+        if (my.dataset.link) {
+          myD[i].innerHTML = '<a href="' + my.dataset.link + '" target="_blank">' + myD[i].innerHTML + '</a>';
+        }
+      }
+    }else{
+      if (myD[i].innerHTML == my.dataset.dd && myD[i].parentNode.parentNode.parentNode.dataset.m == (my.dataset.mm - 1)) {
+        myD[i].title = my.dataset.text;
+        if (my.dataset.link) {
+          myD[i].innerHTML = '<a href="' + my.dataset.link + '" target="_blank">' + myD[i].innerHTML + '</a>';
+        }
+      }
+    }
+  }
+}
+
+}}
+
+calendarBig(new Date().getFullYear());
+document.querySelector('#calendarBig > thead td:nth-child(1)').onclick = calendarBigG;
+document.querySelector('#calendarBig > thead td:nth-child(3)').onclick = calendarBigG;
+function calendarBigG() {calendarBig(this.innerHTML.replace(/[^\d]/gi, ''));}
+
+</script>
+Copyright Earthlys, 2016-2018</center>
+</body>
+</html>
