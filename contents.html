@@ -1,22 +1,24 @@
-<!DOCTYPE html>
 <html>
 
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.37/css/uikit.min.css">
+  <!-- UIkit JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.37/js/uikit.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.37/js/uikit-icons.min.js"></script>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="favicon.png">
   <link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png">
   <title>Earthlys :: Лучшее</title>
-  <link rel="stylesheet" href="libs/content/css/uikit-rtl.css"> 
-  <link rel="stylesheet" type="text/css"
-
-  <!-- UIkit JS -->
+  <link rel="stylesheet" href="libs/content/css/uikit-rtl.css">
+  <link rel="stylesheet" type="text/css" <!--="" uikit="" js="" --="">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.35/js/uikit.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.35/js/uikit-icons.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.35/js/uikit-icons.min.js"></script>
 </head>
+
 <body class="contents page v7">
- <div class="tm-page">
+  <div class="tm-page">
     <div class="tm-header-mobile uk-hidden@m">
       <nav class="uk-navbar-container uk-navbar" uk-navbar="">
         <div class="uk-navbar-center">
@@ -40,10 +42,10 @@
                     <li class="uk-active  menu-item menu-item-type-custom menu-item-object-custom">
                       <a href="index.html">Главная</a>
                     </li>
-                    <li class=" menu-item menu-item-type-taxonomy menu-item-object-category">
+                    <li class="  menu-item menu-item-type-taxonomy menu-item-object-category">
                       <a href="contents.html">Статьи</a>
                     </li>
-                    <li class=" menu-item menu-item-type-post_type menu-item-object-page">
+                    <li class=" menu-item menu-item-type-taxonomy menu-item-object-category">
                       <a href="calendar.html">Календарь событий</a>
                     </li>
                     <li class=" menu-item menu-item-type-post_type menu-item-object-page">
@@ -63,14 +65,14 @@
         </div>
       </div>
     </div>
-    <!-- Десктопное меню-->
+    <!--Десктопное меню-->
     <div class="tm-header uk-visible@m" uk-header="">
       <div class="tm-headerbar-top">
         <div class="uk-container">
           <div class="uk-text-center"> </div>
         </div>
       </div>
-      <div uk-sticky="" media="768" cls-active="uk-navbar-sticky" sel-target=".uk-navbar-container" class="uk-sticky" style="">
+      <div uk-sticky="" media="768" cls-active="uk-navbar-sticky" sel-target=".uk-navbar-container" class="uk-sticky uk-sticky-fixed" style="position: fixed; top: 0px; width: 1354px;">
         <div class="uk-navbar-container">
           <div class="uk-container">
             <nav class="uk-navbar" uk-navbar="{&quot;align&quot;:&quot;left&quot;}">
@@ -79,14 +81,14 @@
                   <li class="menu-item menu-item-type-post_type menu-item-object-page">
                     <a href="index.html" class="ustom"><b>Earthlys </b> / Главная</a>
                   </li>
-                  <li class="uk-active  menu-item menu-item-type-custom menu-item-object-custom ">
+                  <li class="uk-active  menu-item menu-item-type-custom menu-item-object-custom">
                     <a href="contents.html" class="">Статьи</a>
                   </li>
                   <li class="menu-item menu-item-type-post_type menu-item-object-page">
                     <a href="calendar.html">Календарь событий</a>
                   </li>
                   <li class=" menu-item menu-item-type-post_type menu-item-object-page">
-                    <a href="about.html">О "Earthlys"</a>
+                    <a href="about.html" class="">О "Earthlys"</a>
                   </li>
                   <li class=" menu-item menu-item-type-post_type menu-item-object-page">
                     <a href="contacts.html">Контакты</a>
@@ -100,14 +102,9 @@
           </div>
         </div>
       </div>
+      <div class="uk-sticky-placeholder" style="height: 80px; margin: 0px;"></div>
     </div>
-  </div>
-  <div class="uk-sticky-placeholder" style="height: 70px; margin: 0px;" hidden=""></div>
-  <div id="tm-main" class="tm-main uk-section uk-section-default" uk-height-viewport="expand: true" style="box-sizing: border-box;">
-    <div class="uk-container">
-      <div class="uk-grid uk-grid-large" uk-grid="">
-        <div class="uk-width-expand@m uk-first-column">
-      <div class="news">
+    <div class="news">
       <div class="uk-container">
         <div class="uk-grid uk-grid-xxlarge" uk-grid="">
           <div class="uk-width-expand@m uk-first-column">
@@ -128,7 +125,8 @@
                         <a href="chat.html" rel="category">Обсуждение</a>
                       </li>
                     </ul>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+                    <p>Компания Revolut запустила сервис страхования путешественников, основанный на геолокации. Если пользователь отправится в другую страну, приложение определит это по его местоположению и автоматически оформит страховку, которая будет
+                      ежедневно продлеваться пока пользователь не...</p>
                   </div>
                 </div>
               </article>
@@ -146,7 +144,8 @@
                       <a href="chat.html" rel="category">Обсуждение</a>
                     </li>
                   </ul>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+                  <p>Свияжск - исторический город(село), населением в 243 человека, основанный 24 мая 1551 года, в Неделю всех святых Шигалей. Приплыло тогда войско русское на высокий берег и начали рубить лес, чтобы основать здесь град. Построен он был
+                    всего за 4 недели...</p>
                 </div>
               </article>
               <!--Пост 3-->
@@ -163,14 +162,192 @@
                       <a href="chat.html" rel="category">Обсуждение</a>
                     </li>
                   </ul>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+                  <p>Для иностранцев это кладезь фольклора, завораживающие пейзажи, тяжелая кухня, горные озера и ежегодный пивной «Октоберфест» в Мюнхене. Для жителей других регионов Германии это объект насмешек, порой довольно едких, за которыми — плохо
+                    скрываемая зависть. Бавария — самая большая, самая богатая и самая консервативная федеральная земля Германии...</p>
                 </div>
               </article>
+              <!--Пост 4-->
+              <article class="news-item" data-category="_">
+                <div class="thumb">
+                  <div class="thumbail">
+                    <img alt="Нет изображения" title="Титульник изображения" src="http://allinphoto.ru/wp-content/uploads/2017/05/75992-instrukciya-otvetstvennogo-za-pitanie-detey-v-shkole.jpg"> </div>
+                  <div class="news-txt">
+                    <h3>
+                      <a href="identificator.html">Титульник для поста</a>
+                    </h3>
+                    <ul class="uk-subnav uk-subnav-divider">
+                      <li><span><time datetime="2018-01-17T24:25:30+00:00">17 Января 2018</time></span></li>
+                      <li>
+                        <a href="admin.html" rel="category">Администратор</a>
+                      </li>
+                    </ul>
+                    <p>Текст какой-то там</p>
+                  </div>
+                </div>
+              </article>
+              <!--Пост 5-->
+              <article class="news-item" data-category="_">
+                <div class="thumb">
+                  <div class="thumbail">
+                    <img alt="Нет изображения" title="Титульник изображения" src="http://allinphoto.ru/wp-content/uploads/2017/05/75992-instrukciya-otvetstvennogo-za-pitanie-detey-v-shkole.jpg"> </div>
+                  <div class="news-txt">
+                    <h3>
+                      <a href="identificator.html">Титульник для поста</a>
+                    </h3>
+                    <ul class="uk-subnav uk-subnav-divider">
+                      <li><span><time datetime="2018-01-17T24:25:30+00:00">17 Января 2018</time></span></li>
+                      <li>
+                        <a href="admin.html" rel="category">Администратор</a>
+                      </li>
+                    </ul>
+                    <p>Текст какой-то там</p>
+                  </div>
+                </div>
+              </article>
+              <!--Пост 6-->
+              <article class="news-item" data-category="_">
+                <div class="thumb">
+                  <div class="thumbail">
+                    <img alt="Нет изображения" title="Титульник изображения" src="http://allinphoto.ru/wp-content/uploads/2017/05/75992-instrukciya-otvetstvennogo-za-pitanie-detey-v-shkole.jpg"> </div>
+                  <div class="news-txt">
+                    <h3>
+                      <a href="identificator.html">Титульник для поста</a>
+                    </h3>
+                    <ul class="uk-subnav uk-subnav-divider">
+                      <li><span><time datetime="2018-01-17T24:25:30+00:00">17 Января 2018</time></span></li>
+                      <li>
+                        <a href="admin.html" rel="category">Администратор</a>
+                      </li>
+                    </ul>
+                    <p>Текст какой-то там</p>
+                  </div>
+                </div>
+              </article>
+              <!--Пост 7-->
+              <article class="news-item" data-category="_">
+                <div class="thumb">
+                  <div class="thumbail">
+                    <img alt="Нет изображения" title="Титульник изображения" src="http://allinphoto.ru/wp-content/uploads/2017/05/75992-instrukciya-otvetstvennogo-za-pitanie-detey-v-shkole.jpg"> </div>
+                  <div class="news-txt">
+                    <h3>
+                      <a href="identificator.html">Титульник для поста</a>
+                    </h3>
+                    <ul class="uk-subnav uk-subnav-divider">
+                      <li><span><time datetime="2018-01-17T24:25:30+00:00">17 Января 2018</time></span></li>
+                      <li>
+                        <a href="admin.html" rel="category">Администратор</a>
+                      </li>
+                    </ul>
+                    <p>Текст какой-то там</p>
+                  </div>
+                </div>
+              </article>
+              <!--Пост 8-->
+              <article class="news-item" data-category="_">
+                <div class="thumb">
+                  <div class="thumbail">
+                    <img alt="Нет изображения" title="Титульник изображения" src="http://allinphoto.ru/wp-content/uploads/2017/05/75992-instrukciya-otvetstvennogo-za-pitanie-detey-v-shkole.jpg"> </div>
+                  <div class="news-txt">
+                    <h3>
+                      <a href="identificator.html">Титульник для поста</a>
+                    </h3>
+                    <ul class="uk-subnav uk-subnav-divider">
+                      <li><span><time datetime="2018-01-17T24:25:30+00:00">17 Января 2018</time></span></li>
+                      <li>
+                        <a href="admin.html" rel="category">Администратор</a>
+                      </li>
+                    </ul>
+                    <p>Текст какой-то там</p>
+                  </div>
+                </div>
+              </article>
+              <!--Пост 9-->
+              <article class="news-item" data-category="_">
+                <div class="thumb">
+                  <div class="thumbail">
+                    <img alt="Нет изображения" title="Титульник изображения" src="http://allinphoto.ru/wp-content/uploads/2017/05/75992-instrukciya-otvetstvennogo-za-pitanie-detey-v-shkole.jpg"> </div>
+                  <div class="news-txt">
+                    <h3>
+                      <a href="identificator.html">Титульник для поста</a>
+                    </h3>
+                    <ul class="uk-subnav uk-subnav-divider">
+                      <li><span><time datetime="2018-01-17T24:25:30+00:00">17 Января 2018</time></span></li>
+                      <li>
+                        <a href="admin.html" rel="category">Администратор</a>
+                      </li>
+                    </ul>
+                    <p>Текст какой-то там</p>
+                  </div>
+                </div>
+              </article>
+              <!--Промежуточный Пост 10-->
+<article class="cover" data-category="6">
+  
+              </article>
+              <!--Пост 11-->
+              <article class="news-item" data-category="_">
+                <div class="thumb">
+                  <div class="thumbail">
+                    <img alt="Нет изображения" title="Титульник изображения" src="http://allinphoto.ru/wp-content/uploads/2017/05/75992-instrukciya-otvetstvennogo-za-pitanie-detey-v-shkole.jpg"> </div>
+                  <div class="news-txt">
+                    <h3>
+                      <a href="identificator.html">Титульник для поста</a>
+                    </h3>
+                    <ul class="uk-subnav uk-subnav-divider">
+                      <li><span><time datetime="2018-01-17T24:25:30+00:00">17 Января 2018</time></span></li>
+                      <li>
+                        <a href="admin.html" rel="category">Администратор</a>
+                      </li>
+                    </ul>
+                    <p>Текст какой-то там</p>
+                  </div>
+                </div>
+              </article>
+              <!--Пост 12-->
+              <article class="news-item" data-category="_">
+                <div class="thumb">
+                  <div class="thumbail">
+                    <img alt="Нет изображения" title="Титульник изображения" src="http://allinphoto.ru/wp-content/uploads/2017/05/75992-instrukciya-otvetstvennogo-za-pitanie-detey-v-shkole.jpg"> </div>
+                  <div class="news-txt">
+                    <h3>
+                      <a href="identificator.html">Титульник для поста</a>
+                    </h3>
+                    <ul class="uk-subnav uk-subnav-divider">
+                      <li><span><time datetime="2018-01-17T24:25:30+00:00">17 Января 2018</time></span></li>
+                      <li>
+                        <a href="admin.html" rel="category">Администратор</a>
+                      </li>
+                    </ul>
+                    <p>Текст какой-то там</p>
+                  </div>
+                </div>
+              </article>
+              <!--Пост 13-->
+              <article class="news-item" data-category="_">
+                <div class="thumb">
+                  <div class="thumbail">
+                    <img alt="Нет изображения" title="Титульник изображения" src="http://allinphoto.ru/wp-content/uploads/2017/05/75992-instrukciya-otvetstvennogo-za-pitanie-detey-v-shkole.jpg"> </div>
+                  <div class="news-txt">
+                    <h3>
+                      <a href="identificator.html">Титульник для поста</a>
+                    </h3>
+                    <ul class="uk-subnav uk-subnav-divider">
+                      <li><span><time datetime="2018-01-17T24:25:30+00:00">17 Января 2018</time></span></li>
+                      <li>
+                        <a href="admin.html" rel="category">Администратор</a>
+                      </li>
+                    </ul>
+                    <p>Текст какой-то там</p>
+                  </div>
+                </div>
+              </article>
+              <!--Сайдбар-->
             </section>
             <aside class="aside">
-            <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-12/jquery-2.0.3.min_1.js"></script>
+              <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-12/jquery-2.0.3.min_1.js"></script>
+            </aside>
           </div>
-          <aside id="tm-sidebar" class="tm-sidebar uk-width-1-4@m">
+          <aside class="tm-sidebar uk-width-1-4@m" id="tm-sidebar">
             <div class="uk-child-width-1-1 uk-grid uk-grid-stack" uk-grid="">
               <div class="uk-first-column">
                 <div class="uk-panel widget-text" id="widget-text-2">
